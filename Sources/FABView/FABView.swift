@@ -1,3 +1,1 @@
-struct FABView {
-    var text = "Hello, World!"
-}
+struct FABView { }
