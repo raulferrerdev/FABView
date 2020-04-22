@@ -27,7 +27,7 @@ import UIKit
 public class FABMainView: UIStackView {
     
     private let stackView = FABStackView(frame: .zero)
-    private var mainButton = FABMainButton(frame: .zero)
+    private var mainButton = FABMainButton(shadow: false)
     private var isMenuOnScreen: Bool = false
     
     weak public var delegate: FABSecondaryButtonDelegate?

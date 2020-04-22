@@ -28,7 +28,7 @@ class FABMainButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        configure()
+        configure(shadow: true)
     }
     
 
@@ -37,10 +37,17 @@ class FABMainButton: UIButton {
     }
     
     
-    private func configure() {
+    init(shadow: Bool) {
+        super.init(frame: .zero)
+        configure(shadow: shadow)
+    }
+    
+    
+    private func configure(shadow: Bool) {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.white
         layer.cornerRadius = 25
+        guard shadow else { return }
         dropButtonShadow()
     }
 
