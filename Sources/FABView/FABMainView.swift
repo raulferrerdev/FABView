@@ -93,24 +93,24 @@ public class FABMainView: UIStackView {
     }
 }
 
-public extension FABMainView {
-    func addSecondaryButtonWith(image: UIImage, labelTitle: String, action: @escaping () -> ()) {
+extension FABMainView {
+    public func addSecondaryButtonWith(image: UIImage, labelTitle: String, action: @escaping () -> ()) {
         stackView.addSecondaryButtonWith(image: image, labelTitle: labelTitle, action: action)
     }
     
     
-    func setFABButton() {
+    public func setFABButton() {
         stackView.setFABButton()
     }
     
     
-    func resetFABButton() {
+    public func resetFABButton() {
         stackView.resetFABButton()
         isMenuOnScreen = false
     }
     
     
-    func addShadow() {
+    public func addShadow() {
         mainButton.setShadow()
     }
 }

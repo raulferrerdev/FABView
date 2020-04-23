@@ -26,7 +26,7 @@ import UIKit
 
 class FABMainButton: UIButton {
 
-    init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
         configure(shadow: true)
     }
