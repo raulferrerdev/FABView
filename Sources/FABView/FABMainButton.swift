@@ -26,7 +26,7 @@ import UIKit
 
 class FABMainButton: UIButton {
 
-    override init(frame: CGRect) {
+    init(frame: CGRect) {
         super.init(frame: .zero)
         configure(shadow: true)
     }
@@ -40,6 +40,10 @@ class FABMainButton: UIButton {
     init(shadow: Bool) {
         super.init(frame: .zero)
         configure(shadow: shadow)
+    }
+    
+    func setShadow() {
+        dropButtonShadow()
     }
     
     

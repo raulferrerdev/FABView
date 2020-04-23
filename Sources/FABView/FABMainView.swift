@@ -108,6 +108,11 @@ public extension FABMainView {
         stackView.resetFABButton()
         isMenuOnScreen = false
     }
+    
+    
+    func setShadow() {
+        mainButton.setShadow()
+    }
 }
 
 
