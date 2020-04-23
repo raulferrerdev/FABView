@@ -110,7 +110,7 @@ public extension FABMainView {
     }
     
     
-    func setShadow() {
+    func addShadow() {
         mainButton.setShadow()
     }
 }
