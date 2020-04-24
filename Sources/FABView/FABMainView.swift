@@ -113,6 +113,11 @@ extension FABMainView {
     public func addShadow() {
         mainButton.setShadow()
     }
+    
+    
+    public func dismissSecondaryButton() {
+        stackView.dismissButtonsWithReset(false)
+    }
 }
 
 
