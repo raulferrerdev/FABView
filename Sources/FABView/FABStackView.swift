@@ -80,6 +80,12 @@ extension FABStackView {
         component.image = image
         component.title = labelTitle
         component.action = action
+        
+        guard !fabSecondaryButtons.contains(where: { element in
+            if element.title == labelTitle {
+                return true
+            } else { return false }
+        }) else { return }
         fabSecondaryButtons.append(component)
     }
     
