@@ -80,12 +80,6 @@ extension FABStackView {
         component.image = image
         component.title = labelTitle
         component.action = action
-        
-        guard !fabSecondaryButtons.contains(where: { element in
-            if element.title == labelTitle {
-                return true
-            } else { return false }
-        }) else { return }
         fabSecondaryButtons.append(component)
     }
     
@@ -128,24 +122,15 @@ extension FABStackView {
     }
     
     
-    func fullResetView() {
-        secondaryViews.removeAll()
-        secondaryButtons.removeAll()
-        fabSecondaryButtons.removeAll()
-        subviews.forEach({ $0.removeFromSuperview() })
-    }
-    
-    
     func dismissButtonsWithReset(_ reset: Bool) {
         guard let view = secondaryButtons.last else {
-            //            if reset {
-            //                secondaryViews.removeAll()
-            //                secondaryButtons.removeAll()
-            //                fabSecondaryButtons.removeAll()
-            //            } else {
-            fabSecondaryButtons.removeAll()
-            setSecondaryButtonsArray()
-            //            }
+            if reset {
+                secondaryViews.removeAll()
+                secondaryButtons.removeAll()
+                fabSecondaryButtons.removeAll()
+            } else {
+                setSecondaryButtonsArray()
+            }
             return
         }
         
@@ -161,7 +146,7 @@ extension FABStackView {
     
     
     func resetFABButton() {
-        fullResetView()
+        dismissButtonsWithReset(true)
     }
 }
 
