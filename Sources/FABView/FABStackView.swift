@@ -123,6 +123,13 @@ extension FABStackView {
     
     
     func dismissButtonsWithReset(_ reset: Bool) {
+        guard !reset {
+            secondaryViews.removeAll()
+            secondaryButtons.removeAll()
+            fabSecondaryButtons.removeAll()
+            return
+        }
+        
         guard let view = secondaryButtons.last else {
             if reset {
                 secondaryViews.removeAll()
