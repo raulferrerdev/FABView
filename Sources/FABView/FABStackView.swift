@@ -122,26 +122,23 @@ extension FABStackView {
     }
     
     
+    func fullResetView() {
+        secondaryViews.removeAll()
+        secondaryButtons.removeAll()
+        fabSecondaryButtons.removeAll()
+        subviews.forEach({ $0.removeFromSuperview() })
+    }
+    
+    
     func dismissButtonsWithReset(_ reset: Bool) {
-        guard !reset else {
-            secondaryViews.removeAll()
-            secondaryButtons.removeAll()
-            fabSecondaryButtons.removeAll()
-            
-            subviews.forEach({ $0.removeFromSuperview() })
-            return
-        }
-        
         guard let view = secondaryButtons.last else {
-            if reset {
-                secondaryViews.removeAll()
-                secondaryButtons.removeAll()
-                fabSecondaryButtons.removeAll()
-                subviews.forEach({ $0.removeFromSuperview() })
-            } else {
-                subviews.forEach({ $0.removeFromSuperview() })
+//            if reset {
+//                secondaryViews.removeAll()
+//                secondaryButtons.removeAll()
+//                fabSecondaryButtons.removeAll()
+//            } else {
                 setSecondaryButtonsArray()
-            }
+//            }
             return
         }
         
@@ -157,7 +154,7 @@ extension FABStackView {
     
     
     func resetFABButton() {
-        dismissButtonsWithReset(true)
+        fullResetView()
     }
 }
 
