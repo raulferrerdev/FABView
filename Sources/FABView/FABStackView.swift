@@ -139,6 +139,7 @@ extension FABStackView {
                 fabSecondaryButtons.removeAll()
                 subviews.forEach({ $0.removeFromSuperview() })
             } else {
+                subviews.forEach({ $0.removeFromSuperview() })
                 setSecondaryButtonsArray()
             }
             return
